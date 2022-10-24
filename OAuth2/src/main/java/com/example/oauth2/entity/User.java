@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Setter
+
 @Getter // get 함수를 일괄적으로 만들어줍니다.
 @NoArgsConstructor // 기본 생성자를 만들어줍니다.
 @Entity(name = "users") // DB 테이블 역할을 합니다.
@@ -31,14 +31,6 @@ public class User {
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private UserRoleEnum role;
-
-
-    public User(String username, String email, UserRoleEnum role) {
-        this.username = username;
-        this.email = email;
-        this.role = role;
-        this.kakaoId = null;
-    }
 
     public User(String username, String email, UserRoleEnum role, Long kakaoId) {
         this.username = username;
