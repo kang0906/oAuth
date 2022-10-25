@@ -50,6 +50,7 @@ public class KakaoUserService {
 
         // 4. 강제 로그인 처리
         forceLogin(kakaoUser);
+        log.info("user {} has bean login", kakaoUser.getEmail());
     }
 
     private String getAccessToken(String code) throws JsonProcessingException {
